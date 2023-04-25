@@ -1,4 +1,4 @@
-package com.dealapp.app;
+package com.dealorion.app;
 
 import com.getcapacitor.BridgeActivity;
 
