@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "deal-orion"
+  },
+  "targets": {
+    "deal-orion": {
+      "hosting": {
+        "app": [
+          "findaroundhere"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

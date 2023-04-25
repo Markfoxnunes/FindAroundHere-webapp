@@ -6,14 +6,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBTbtL8MajufNeBZLaUtvomRk0bSsx5Y9M",
-    authDomain: "deal-orion.firebaseapp.com",
-    projectId: "deal-orion",
-    storageBucket: "deal-orion.appspot.com",
-    messagingSenderId: "474043130074",
-    appId: "1:474043130074:web:09bf6759599904091105e3",
-    measurementId: "G-XFPV9MPNVV"
-  },
+   apiKey: "AIzaSyBTbtL8MajufNeBZLaUtvomRk0bSsx5Y9M",
+  authDomain: "findaroundhere.firebaseapp.com",
+  projectId: "deal-orion",
+  storageBucket: "deal-orion.appspot.com",
+  messagingSenderId: "474043130074",
+  appId: "1:474043130074:web:1b625104bd67aa971105e3",
+  measurementId: "G-7ZZ3WY5STH"
+},
   google_maps_api_key: 'AIzaSyAVQpa7Ag0t1iBHss9gOoidciOYre3mwD4', 
   stripe: {
     sk: ''
