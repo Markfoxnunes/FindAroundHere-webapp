@@ -6,15 +6,15 @@
 export const environment = {
   production: false,
   firebase: {
-  apiKey: "AIzaSyDC6Drmw5wbjAmGtFvFudS1Cch6fh8IzzQ",
-  authDomain: "olx-clone-6f0b3.firebaseapp.com",
-  projectId: "olx-clone-6f0b3",
-  storageBucket: "olx-clone-6f0b3.appspot.com",
-  messagingSenderId: "356818689538",
-  appId: "1:356818689538:web:7a4a6bb5a356556550d11b",
-  measurementId: "G-ELJWRY8H5Y"
-  },
-  google_maps_api_key: '', 
+    apiKey: "AIzaSyBTbtL8MajufNeBZLaUtvomRk0bSsx5Y9M",
+    authDomain: "deal-orion.firebaseapp.com",
+    projectId: "deal-orion",
+    storageBucket: "deal-orion.appspot.com",
+    messagingSenderId: "474043130074",
+    appId: "1:474043130074:web:09bf6759599904091105e3",
+    measurementId: "G-XFPV9MPNVV"
+    },
+  google_maps_api_key: 'AIzaSyAVQpa7Ag0t1iBHss9gOoidciOYre3mwD4', 
   stripe: {
     sk: ''
   },
