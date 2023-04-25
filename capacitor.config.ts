@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = { 
-  appId: 'com.dealapp.app',
-  appName: 'Deal Buy Sell',
+  appId: 'com.dealorion.app',
+  appName: 'Find Around Here',
   webDir: 'www',
   bundledWebRuntime: false,
 

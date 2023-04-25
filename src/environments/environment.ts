@@ -13,7 +13,7 @@ export const environment = {
     messagingSenderId: "474043130074",
     appId: "1:474043130074:web:09bf6759599904091105e3",
     measurementId: "G-XFPV9MPNVV"
-    },
+  },
   google_maps_api_key: 'AIzaSyAVQpa7Ag0t1iBHss9gOoidciOYre3mwD4', 
   stripe: {
     sk: ''
