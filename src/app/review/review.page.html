@@ -1,0 +1,74 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+ <!-- ================ HEADER START ============== -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'Reviews' | translate }} {{review.length}}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="image">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="{{image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{itemName}}</h3>
+      </ion-label>
+      <ion-text slot="end">${{itemPrice}}</ion-text>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<!-- ================ HEADER END ============== -->
+
+<!-- ================ CONTENT START ============== -->
+<ion-content>
+  <div class="main_content_div">
+    <section *ngFor="let item of review; let i = index">
+      <div class="comment_box">
+        <div class="back_image user_image" [style.backgroundImage]="'url(' + getUserImage(item.userId)  +')'"></div>
+        <div class="comment_detail">
+          
+          <div class="name_flex">
+            <ion-label class="name_lbl_comment">{{getUsername(item.userId)}}</ion-label>
+          </div>
+          <div class="time_flex">
+            <ion-label class="grey_lbl">{{item.date | DateFormat | lowercase}}</ion-label>
+            <!--<ion-icon  name="ellipsis-horizontal-outline" *ngIf="item.userId === myId" (click)="presentActionSheetComment(item.userId, item.id, item)"></ion-icon>-->
+          </div>
+          <ion-label class="content_lbl">{{item.text}}</ion-label>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Skeleton loading -->
+  <div class="ion-text-center spinners"  *ngFor="let item of dummyArray">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <!-- No Chat -->
+  <div *ngIf="!review.length  && !dummyArray.length" class="ion-text-center">
+    <h5 class="empty">{{ 'No Review yet' | translate }}</h5>
+  </div>
+
+</ion-content>
+<!-- ================ CONTENT END ============== -->
+
+<!-- ================ FOOTER ============== -->
+<ion-footer>
+  <div class="footer_div">
+    <ion-input type="text" placeholder="{{ 'Write a comment' | translate }}" [(ngModel)]="text"></ion-input>
+    <ion-icon *ngIf="!text" name="send-outline" class="smile"></ion-icon>
+    <ion-icon *ngIf="text" name="send" class="smile" color="primary" (click)="send()"></ion-icon>
+  </div>
+</ion-footer>

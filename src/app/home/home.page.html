@@ -1,0 +1,89 @@
+ <!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!-- =========== HEADER START ========== -->
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary" [hidden]="backToTop">
+    <ion-title class="ion-text-center">{{ 'What are you looking for?' | translate }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary" *ngIf="backToTop">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<!-- =========== HEADER END ========== -->
+  
+<!-- =========== CONTENT START ========== -->
+<ion-content [fullscreen]="true" [scrollEvents]="true" [scrollEvents]="true" (ionScroll)="getScrollPos($event)">
+  <!--<div  class="bg_image back_images" [style.backgroundImage]="'linear-gradient(rgba(0, 0, 120, 1),  rgba(0, 0, 120, 0.9)), url('+ banner +')'">
+    <ion-searchbar></ion-searchbar>
+  </div>-->
+  <div class="bg_image back_images" [style.background-color]="header"> 
+    <ion-searchbar (click)="search()" placeholder="{{'Search items' | translate }}"></ion-searchbar>
+  </div>
+
+  <!-- Categories -->
+  <ion-row>
+    <ion-col size="4" *ngFor="let item of categories" (click)="goSubcat(item.id, item.name)">
+      <div class="item-box ion-text-center">
+        <div class="img_box">
+          <img src="{{item.image}}">
+        </div>
+        <h2>{{item.name}}</h2>
+      </div>
+    </ion-col>
+  </ion-row> 
+
+  <br/>
+
+  <!--<div class="lines"></div>-->
+  <ion-label class="ion-padding" *ngIf="items.length">New items</ion-label>
+
+  <div class="main_content_div">
+    <div class="main_offer_div" *ngFor="let item of items">
+      <div class="offer_div" (click)="viewDetails(item.id)">
+        <div  *ngFor="let img of item.images | slice:0:1">
+          <img src="{{img}}" class="bg_image back_image"/>
+        </div>
+        <div class="offer_detail">
+          <ion-label>
+            <h3 style="font-family: bold; font-weight: bold">{{item.title}}</h3>
+            <p> <ion-icon name="location-outline"></ion-icon> {{item.locality}}</p>
+            <h2 style="font-family: bold; color:green;">${{item.price}}</h2>
+          </ion-label>
+        </div>
+    </div>
+    <div class="detail_div">
+      <ion-label (click)="chat(item.userId, item.id)">
+        <span><ion-icon name="mail-outline" style="font-size: 20px"></ion-icon></span>
+       {{ 'Chat' | translate }}
+      </ion-label>
+      <div class="line"></div>
+      <ion-label (click)="call(item.phoneNumber)">
+        <span><ion-icon name="call-outline" style="font-size: 20px"></ion-icon></span>
+        {{ 'Call' | translate }}
+      </ion-label>
+    </div>
+   </div>
+  </div>
+
+  <!-- Spinner loader -->
+  <div *ngFor="let item of dummyArray" class="ion-text-center" style="padding-top: 50px" >
+    <ion-spinner color="secondary"></ion-spinner>
+  </div>
+
+  <!--Scroll To Top -->
+  <div class="back-to-top-btn" *ngIf="backToTop" (click)="gotToTop()">
+    <ion-icon name="chevron-up-outline" color="light"></ion-icon>
+  </div>
+</ion-content>
+<!-- ================== CONTENT END ================= -->
+
+
+

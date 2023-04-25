@@ -1,0 +1,25 @@
+ion-content {
+  --background: #fff;
+}
+
+ion-item {
+    border-bottom: 6px solid var(--ion-color-light);
+  }
+
+  ion-avatar{
+    height: 60px;
+    width: 60px;
+  }
+
+  .name {
+    color: var(--ion-color-primary);
+  }
+
+  .ads {
+    background: red;
+    padding: 3px; 
+    font-size: 12px;
+    color: #fff; 
+    margin-right: 5px;
+    //border-radius:5px;
+  }

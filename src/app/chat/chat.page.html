@@ -1,0 +1,51 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!--===================== HEADER START =====================-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ 'Messages' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--===================== HEADER EMD =====================-->
+
+<!--===================== CONTENT START =====================-->
+<ion-content>
+
+  <!-- chat list -->
+  <ion-list lines="none">
+    <ion-item lines="none" *ngFor="let item of chatsList" (click)="goChat(item)">
+      <ion-avatar slot="start">
+        <img src="{{getUserImage(item.chatWith)}}"/>
+      </ion-avatar>
+      <ion-label>
+        <h6 class="name">{{getUsername(item.chatWith)}}</h6>
+        <h4><span class="ads">ads</span> <span>{{item.itemName}}</span> </h4>
+        <p>{{item.lastChat | slice:0:30}}</p>
+      </ion-label>
+      <ion-text slot="end">
+        <p style="font-size: 12px">{{item.timestamp | DateFormat | lowercase}}</p>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+  <!-- Loading -->
+  <div class="ion-text-center spinners"  *ngFor="let item of dummyChat">
+    <ion-spinner color="secondary"></ion-spinner>
+  </div>
+
+  <!-- No Chat -->
+  <div *ngIf="!chatsList.length  && !dummyChat.length" class="ion-text-center" style="padding-top: 40px">
+    <img src="assets/slide2.png"  width="150px" height="150px"/>
+    <h5 class="empty" style="font-family: bold">{{ 'No Chat History' | translate }}</h5>
+  </div>
+
+</ion-content>
+<!--===================== CONTENT END =====================-->

@@ -1,0 +1,75 @@
+ <!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!-- ================ HEADER START ============== -->
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-title>{{ 'Login' | translate }}</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- =============== HEADER END =============== -->
+
+<ion-content>
+  <div class="main_content_div">
+    <div class="content_div"> 
+
+       <div class="ion-text-center ion-padding">
+         <h1 style="color: green; font-size: 50px; font-weight: bold">DEAL</h1>
+       </div>
+       
+        <form [formGroup]="authForm" (ngSubmit)="login()" novalidate>
+          <div class="ip_flex">
+            <ion-input formControlName="email" type="email" placeholder="{{ 'Email' | translate }}"></ion-input>
+          </div>
+          <!-- Email Error -->
+          <P class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">{{ 'Email is required!' | translate }}</P>
+          <P class="error" *ngIf="isSubmitted && errorControl.email.errors?.pattern">{{ 'Please enter valid email!' | translate }}</P>
+
+          <div class="ip_flex">
+            <ion-input formControlName="password" type="password" placeholder="{{ 'Password' | translate }}"></ion-input>
+          </div>
+          <!-- Password Error -->
+          <p class="error" *ngIf="isSubmitted && errorControl.password.errors?.required">{{ 'Password is required' | translate }}.</p>
+          <p class="error" *ngIf="isSubmitted && errorControl.password.errors?.minlength">{{ 'Password should be min 6 chars long' | translate }}.</p>
+
+          <ion-button (click)="goToForgotPassword()" style="text-transform:none; font-size: 14px" class="block_btn" fill="clear" expand="block" color="dark">
+            {{ 'Forgot Password' | translate }}
+          </ion-button>
+
+          <ion-button *ngIf="!isLogin" type="submit" expand="block" mode="ios" class="block_btn">
+            {{ 'Login' | translate }}
+          </ion-button>
+        </form>  
+
+        <!-- Spinner shows when login button is click -->
+        <div class="ion-text-center" *ngIf="isLogin">
+          <ion-spinner name="circles" color="secondary"></ion-spinner>
+        </div>
+
+        <br/>
+          
+          <!--<ion-label class="grey_lbl">By continuing, you agree to our</ion-label>
+          <ion-label class="grey_lbl">
+              <span>Terms of Service </span> &nbsp;
+              <span>Privacy Policy</span> &nbsp;
+              <span>Content Policy</span>
+          </ion-label>-->
+
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-button (click)="goToRegister()" style="text-transform:none;font-size: 14px" class="block_btn" fill="clear" expand="block" color="dark">
+    {{ 'Dont have an account Register' | translate }}
+  </ion-button>
+</ion-footer>

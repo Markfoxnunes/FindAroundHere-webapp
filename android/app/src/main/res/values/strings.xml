@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Deal Buy Sell</string>
+    <string name="title_activity_main">Deal Buy Sell</string>
+    <string name="package_name">com.dealapp.app</string>
+    <string name="custom_url_scheme">com.dealapp.app</string>
+    <string name="admob_app_id">ca-app-pub-8687647491847996~6970937149</string>
+</resources>

@@ -1,0 +1,56 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+<!-- ================ HEADER START ============== -->
+<ion-content [fullscreen]="true">
+
+  <swiper [config]="slideOpts">
+
+    <ng-template swiperSlide>
+      <div  class="ion-text-center slide1">
+        <img src="assets/slide1.png" width="150px" height="150px" style="margin-top: 120px"/>
+        <div class="slider-text ion-text-center">
+          <h2 style="font-family: bold">{{ 'Explore best deals' | translate }}</h2>
+          <p>
+            {{ 'Users can find easily all the best deals' | translate }}
+          </p>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div  class="ion-text-center slide2">
+        <img src="assets/slide2.png" width="150px" height="150px" style="margin-top: 120px"/>
+        <div class="slider-text ion-text-center">
+          <h2 style="font-family: bold; padding-left: 15px; padding-right: 15px">{{ 'Chat, negotiate & make offer' | translate }}</h2>
+          <p style="font-family: regular; padding-left: 15px; padding-right: 15px">
+            {{ 'Users can make easy contact for negotiate & make offers' | translate }}
+          </p>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div  class="ion-text-center slide3">
+        <img src="assets/slide3.png" width="150px" height="150px" style="margin-top: 120px"/>
+        <div class="slider-text ion-text-center">
+          <h2 style="font-family: bold; padding-left: 15px; padding-right: 15px">{{ 'Upload your items to sell' | translate }}</h2>
+          <p style="font-family: regular; padding-left: 15px; padding-right: 15px">
+            {{ 'Users can make easily upload items to sell to other users around you' | translate }}
+          </p>
+        </div>
+        <div style="margin-top: 50px; padding: 20px">
+          <ion-button shape="round" fill="outline" color="light" expand="block" (click)="goHome()">{{ 'Get Started' | translate }}</ion-button>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+
+</ion-content>

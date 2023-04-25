@@ -1,0 +1,45 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+<!-- ================ HEADER START ============== -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'Notifications' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-list>
+  <ion-item lines="full" *ngFor="let item of items">
+    <ion-label>
+     <h6><b>{{item.title}}</b></h6>
+     <p>{{item.description}}</p>
+    </ion-label>
+    <ion-text slot="end">
+      <p>{{item.date | date}}</p>
+    </ion-text>
+  </ion-item>
+ </ion-list>
+ 
+ <!-- Loading -->
+ <div class="ion-text-center" style="padding-top: 50px" *ngFor="let item of dummyArray">
+  <ion-spinner color="secondary"></ion-spinner>
+ </div>
+
+ <!-- No Chat -->
+ <div *ngIf="!items.length  && !dummyArray.length" class="ion-text-center" style="padding-top: 40px">
+   <img src="assets/watch.png" width="150px" height="150px" />
+   <h5 class="empty" style="font-family:bold">{{ 'No Notification' | translate }}</h5>
+  </div>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+ <!-- ================ HEADER START ============== -->
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'Report abuse' | translate }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="image">
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img src="{{image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{itemName}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+  <ion-toolbar>
+    <h6 style="padding-left: 10px"><b>{{ 'Why do you want to report an abuse?' | translate }}</b></h6>
+  </ion-toolbar>
+</ion-header>
+<!-- ================ HEADER END ============== -->
+
+<!-- ================ CONTENT START ============== -->
+<ion-content class="ion-padding">
+  <div class="ip_flex">
+    <ion-select [(ngModel)]="reason" placeholder="{{ 'Chose report reason' | translate }}">
+      <ion-select-option *ngFor="let item of resaons" color="secondary" [value]="item.name">{{item.name | translate}}</ion-select-option>
+    </ion-select>
+  </div>
+
+  <ion-textarea type="text" [(ngModel)]="description" autoGrow="true" placeholder="{{ 'Describe your issue' | translate }}"></ion-textarea>
+  <br/>
+
+  <div class="ion-text-center">
+    <ion-button color="secondary" (click)="report()">{{ 'Report' | translate }}</ion-button>
+  </div>
+  
+</ion-content>
+<!-- ================ CONTENT END ============== -->

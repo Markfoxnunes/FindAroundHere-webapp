@@ -1,0 +1,204 @@
+/*
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Connect - ionic 6 Social Forum FirebaseV9 
+  Created : 01-July-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+*/
+
+
+  .main_content_div {
+      padding: 16px;
+    
+      .comment_box {
+        display: flex;
+        margin-bottom: 16px;
+    
+        .user_image {
+          height: 46px;
+          width: 46px;
+          min-width: 46px;
+          border-radius: 100%;
+          background: lightgrey;
+        }
+        .comment_detail {
+          margin-left: 12px;
+          position: relative;
+          padding: 10px;
+          border-radius: 10px;
+          width: 100%;
+          background: #fff;
+          .like {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            height: 18px;
+            width: 18px;
+            //background: red;
+          }
+          .count {
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            height: 15px;
+            width: 15px;
+            font-size: 13px;
+          }
+           .name_flex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            //margin-bottom: 5px;
+            .name_lbl_comment {
+              font-size: 15px;
+              margin-bottom: 2px;
+            }
+           }
+          
+    
+          .time_flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+    
+            .grey_lbl {
+              color: grey;
+              font-size: 12px;
+            }
+    
+            .vote_lbl {
+              color: var(--ion-color-primary);
+              font-family: "medium";
+              font-size: 12px;
+            }
+          }
+  
+         
+          .reply_lbl {
+            color: var(--ion-color-primary);
+            font-family: "medium";
+            font-size: 12px;
+            }
+          
+  
+          .content_lbl {
+            font-size: 14px;
+          }
+  
+          .view_reply {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+  
+  
+  
+      .reply_box {
+        display: flex;
+        margin-bottom: 16px;
+        margin-left: 15px;
+    
+        .user_image_reply {
+          height: 38px;
+          width: 38px;
+          min-width: 38px;
+          border-radius: 100%;
+          background: lightgrey;
+        }
+        .comment_detail_reply {
+          margin-left: 14px;
+          padding: 8px;
+          border-radius: 10px;
+          width: 100%;
+          background: #f2f2f2;
+    
+          .name_flex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            //margin-bottom: 5px;
+            .name_lbl {
+              font-family: "medium";
+              font-size: 15px;
+              margin-bottom: 2px;
+            }
+           }
+    
+          .time_flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+    
+            .grey_lbl {
+              color: grey;
+              font-size: 12px;
+            }
+    
+            .vote_lbl {
+              color: var(--ion-color-primary);
+              font-family: "medium";
+              font-size: 12px;
+            }
+          }
+  
+         
+          .reply_lbl {
+            color: var(--ion-color-primary);
+            font-family: "medium";
+            font-size: 12px;
+            }
+          
+  
+          .content_lbl {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  
+    .footer_div{
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+  
+      ion-icon{
+          color:gray;
+          font-size: 20px;
+      }
+      ion-input{
+          border-radius: 25px;
+          background: #f0f0f0;
+          border: 1px solid lightgray;
+          //@at-root: 5px;
+          margin-right: 20px;
+          --padding-start: 8px;
+          font-family: 'regular';
+      }
+  
+      
+      .smile{
+          position: absolute;
+          right: 5px;
+          font-size: 25px;
+          //left: 10px;
+      }
+      .pin{
+          position: absolute;
+          font-size: 23px;
+          right: 35px;
+      }
+  }
+  
+  .name_lbl_comment {
+    color: #000;
+  }
+  
+  .content_lbl {
+    color: #000;
+  }

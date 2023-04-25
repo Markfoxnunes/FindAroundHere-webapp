@@ -1,0 +1,154 @@
+ion-content {
+    --background: #f2f2f2;
+  }
+
+  ion-toolbar{
+    --background: transparent;
+    background: transparent;
+  }
+  .main_content_div {
+
+    .home_slider{
+      //padding: 10px !important;
+  }
+  
+   .swiper-container{
+       width: 100% !important;
+       height: 150px;
+       position: relative;
+       margin: auto;
+       border-radius: 10px;
+
+   }
+  
+   .swiper-slide {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+
+       img{
+        width: 100% !important;
+        height: 300px;
+       // object-fit: contain;
+       }
+   }
+
+
+
+
+    .slider_div {
+      width: 100%;
+      height: 300px;
+      top: 0;
+      //position: fixed;
+      .icn_flex {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .email-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(to top,rgba(0,0,0,0.7), transparent);
+            color: #e4e4e4;
+            text-transform: capitalize;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+        
+
+        
+    }
+  
+      .back_image {
+        width: 100%;
+        height: 300px;
+
+        .overlay {
+          background: rgba(0, 0, 0, 0.7);
+          width: 100%;
+          height: 60px;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          left: 0px;
+          padding: 5px;
+          border-top: 2px solid #fff;
+
+          .details{
+            display: flex;
+            justify-content: space-between;
+           
+          }
+
+  
+          
+        }
+      }
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 7px;
+        height: auto;
+        width: 100%;
+       // margin: 10px;
+        box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+    }
+
+    #map{
+      height: 150px; //50vh;
+      width: 100%;
+     // border: 1px solid gray;
+     box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+     margin-bottom: 10px;
+     border-radius: 7px;
+  }
+
+    .cards {
+      background: #fff;
+      border-radius: 7px;
+      //height: 180px;
+      height: auto;
+      width: 100%;
+     // margin: 10px;
+      box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+  }
+
+  .cards_price {
+    background: #fff;
+    border-radius: 7px;
+    //height: 180px;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 10px;
+    width: 100%;
+   // margin: 10px;
+    box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+  .profile {
+    background: #fff;
+    border-radius: 7px;
+    //height: 180px;
+    height: auto;
+    width: 100%;
+   // margin: 10px;
+    box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+  
+    
+  }

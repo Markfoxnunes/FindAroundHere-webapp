@@ -1,0 +1,26 @@
+ion-modal {
+    --border-radius: 10px 10px 0 0;
+}
+
+ion-button {
+    text-transform: none;
+}
+
+h6{
+    font-size: 13px;
+}
+
+.sign{
+    color: var(--ion-color-secondary);
+    font-size: 13px;
+}
+
+ion-tab-button{
+    --color-selected: var(--ion-color-secondary);
+}
+
+.policy {
+    color:black;
+    font-weight: bold;
+    font-size: 13px;
+}

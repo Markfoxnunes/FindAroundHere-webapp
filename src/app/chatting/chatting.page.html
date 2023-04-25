@@ -1,0 +1,76 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!--===================== HEADER START =====================-->
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="profile_box d-flex">
+				<div class="img_box" *ngIf="photoURL">
+					<img src="{{photoURL}}">
+				</div>
+				<h2>
+					<span class="name">{{displayName}}</span>
+					<small  *ngIf="online === true && typing === false">{{ 'online' | translate }}</small>
+					<small  *ngIf="online === true && typing === true">{{ 'Typing...' | translate }}</small>
+				</h2>
+				<h3 class="end">
+					<ion-icon (click)="call(phoneNumber)" class="zmdi zmdi-phone ion-text-end"></ion-icon>
+				</h3>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+	<!-- item -->
+	<ion-toolbar *ngIf="image">
+		<ion-item lines="none">
+		  <ion-thumbnail slot="start">
+			<img src="{{image}}">
+		  </ion-thumbnail>
+		  <ion-label>
+			<h3>{{itemName}}</h3>
+		  </ion-label>
+		  <ion-text slot="end">${{itemPrice}}</ion-text>
+		</ion-item>
+	</ion-toolbar>
+</ion-header>
+<!--===================== HEADER END =====================-->
+
+<!--===================== CONTENT START =====================-->
+<ion-content fullscreen>
+	<div class="chat_container d-flex" *ngFor="let message of chatsList; let i = index">
+		<div class="chat_box d-flex received" *ngIf="message.idFrom == userId">
+			<div class="chat">
+                <h2><span>{{message.content}}</span></h2>
+				<p>{{message.timestamp | DateFormat | lowercase}}</p>
+			</div>
+		</div>
+		<div class="chat_box d-flex send" *ngIf="message.idFrom != userId">
+			<div class="chat">
+                <h2><span>{{message.content}}</span></h2>
+				<p>{{message.timestamp | DateFormat | lowercase}} <ion-icon *ngIf="message.isread === false" color="light" class="zmdi zmdi-check-all"></ion-icon>
+					<ion-icon *ngIf="message.isread === true" color="danger" class="zmdi zmdi-check-all"></ion-icon>
+				</p>
+			</div>
+		</div>
+	</div>
+</ion-content>
+<!--===================== CONTENT END =====================-->
+
+<!--===================== FOOTER =====================-->
+<ion-footer>
+	<div class="footer_div">
+	  <ion-input type="text" placeholder="{{ 'Write a comment' | translate }}" [(ngModel)]="textMessage"></ion-input>
+	  <ion-icon *ngIf="!textMessage" name="send-outline" class="smile"></ion-icon>
+	  <ion-icon *ngIf="textMessage" name="send" class="smile" color="primary" (click)="sends('text')"></ion-icon>
+	</div>
+</ion-footer>

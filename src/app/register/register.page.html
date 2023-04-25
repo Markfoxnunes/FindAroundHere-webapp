@@ -1,0 +1,75 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+ <!-- ================ HEADER START ============== -->
+ <ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start"> 
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'Register' | translate }}</ion-title>
+  </ion-toolbar>
+ </ion-header>
+ <!-- ================ HEADER END ============== -->
+
+ <!-- ================ CONTENT START ============== -->
+ <ion-content>
+  <div class="main_content_div">
+
+      <div class="content_div">
+        <form [formGroup]="authForm" (ngSubmit)="signup()" novalidate>
+          <div class="ip_flex">
+            <ion-input type="text" formControlName="displayName" placeholder="{{ 'Fullname' | translate }}"></ion-input>
+          </div>
+          <!-- Full Name Error -->
+          <p class="error" *ngIf="isSubmitted && errorControl.displayName.errors?.required">{{ 'Name is required' | translate }}.</p>
+          <p class="error" *ngIf="isSubmitted && errorControl.displayName.errors?.minlength">{{ 'Name should be min 4 chars long' | translate }}.</p>
+
+          <div class="ip_flex">
+            <ion-input type="text" formControlName="phoneNumber" placeholder="{{ 'Phone Number' | translate }}"></ion-input>
+          </div>
+          <!-- Email Error -->
+          <p class="error" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.required">{{ 'Phone is required' | translate }}.</p>
+          <p class="error" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.pattern">{{ 'Please provide valid phone number' | translate }}.</p>
+          
+          <div class="ip_flex">
+           <ion-input type="text" formControlName="email" placeholder="{{ 'Email' | translate }}"></ion-input>
+          </div>
+          <!-- Email Error -->
+          <p class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">{{ 'Email is required' | translate }}.</p>
+          <p class="error" *ngIf="isSubmitted && errorControl.email.errors?.pattern">{{ 'Please provide valid email id' | translate }}.</p>
+
+          <div class="ip_flex">
+            <ion-input type="password" formControlName="password" placeholder="{{ 'Password' | translate }}"></ion-input>
+          </div>
+          <!-- Password Error -->
+          <p class="error" *ngIf="isSubmitted && errorControl.password.errors?.required">{{ 'Password is required' | translate }}.</p>
+          <p class="error" *ngIf="isSubmitted && errorControl.password.errors?.minlength">{{ 'Password should be min 6 chars long' | translate }}.</p>
+
+          <ion-button *ngIf="!isRegister" type="submit" expand="block" mode="ios" class="block_btn">
+            {{ 'Register' | translate }}
+          </ion-button>
+        </form>
+
+        <!-- Spinner shows when register button is click -->
+         <div class="ion-text-center" *ngIf="isRegister">
+            <ion-spinner color="secondary"></ion-spinner>
+          </div>
+
+        
+      </div>
+
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-button (click)="goToLogin()" style="text-transform:none; font-size: 13px" class="block_btn" fill="clear" expand="block" color="dark">
+    {{ 'Already have an account, Login' | translate }}
+  </ion-button>
+</ion-footer>

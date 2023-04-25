@@ -1,0 +1,63 @@
+.ios,
+.md {
+    --primary: #2172ec;
+    --white: #fff;
+    --text-black: #000;
+    --text-light: #818181;
+    --bg-color: #f2f2f2;
+    --text-dark: #353535;
+    --red_color: #f83232;
+    --transparent: rgba(0, 0, 0, 0);
+}
+
+
+
+ion-content {
+    --background: var(--bg-color);
+}
+
+ion-row {
+    padding: 12px 5px 0 5px;
+
+    ion-col {
+        padding: 3px 2.5px 3px 2.5px;
+
+        .item-box {
+            background: var(--white);
+            border-radius: 7px;
+            overflow: hidden;
+            position: relative;
+            padding: 12px;
+            box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+
+            .img_box {
+                width: 89px;
+                margin: 0 auto;
+                height: 70px;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 15px;
+
+                img {
+                    position: absolute;
+                    width: auto;
+                    height: 70%;
+                    left: -50% !important;
+                    right: -50% !important;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+
+            }
+
+            h2 {
+                margin: 0;
+                font-size: 0.9rem;
+                max-width: 100%;
+
+            }
+
+        }
+    }
+}

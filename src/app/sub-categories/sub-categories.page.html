@@ -1,0 +1,41 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+ <!-- ================ HEADER START ============== -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- ================ HEADER END ============== -->
+
+<!-- ================ CONTENT START ============== -->
+<ion-content>
+  <!-- Categories -->
+  <ion-row>
+    <ion-col size="4" *ngFor="let item of subcategories" (click)="view(item.id)">
+      <div class="item-box ion-text-center">
+        <div class="img_box">
+          <img src="{{item.image}}">
+        </div>
+        <h2>{{item.name}}</h2>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="ion-text-center" style="padding-top: 50px" *ngFor="let item of dummy">
+    <ion-spinner color="secondary"></ion-spinner>
+  </div>
+
+</ion-content>
+<!-- ================ CONTENT END ============== -->

@@ -1,0 +1,66 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!-- ================== HEADER START ================= -->
+ <ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ 'Items' | translate }}</ion-title>
+      <ion-button fill="clear" slot="end">
+          <ion-icon name="share-social-sharp"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+<!-- ================== HEADER END ================= -->
+
+<!-- ================== CONTENT START ================= -->
+<ion-content>
+  <div class="main_content_div">
+    <div class="main_offer_div" *ngFor="let item of items">
+      <div class="offer_div" (click)="viewDetails(item.id)">
+        <div *ngFor="let img of item.images | slice:0:1">
+          <img src="{{img}}" class="bg_image back_image"/>
+        </div>
+        <div class="offer_detail">
+          <ion-label>
+            <h3 style="font-family: bold;">{{item.title}}</h3>
+            <p> <ion-icon name="location-outline"></ion-icon> {{item.locality}}</p>
+            <h2 style="font-family: bold; color:green;">${{item.price}}</h2>
+          </ion-label>
+        </div>
+    </div>
+    <div class="detail_div">
+      <ion-label (click)="chat(item.userId, item.id)">
+        <span><ion-icon name="mail-outline" style="font-size: 20px"></ion-icon></span>
+       {{ 'Chat' | translate }}
+      </ion-label>
+      <div class="line"></div>
+      <ion-label (click)="call(item.phoneNumber)">
+        <span><ion-icon name="call" style="font-size: 20px"></ion-icon></span>
+        {{ 'Call' | translate }}
+      </ion-label>
+    </div>
+   </div>
+  </div>
+
+  <!-- Loading -->
+  <div class="ion-text-center" style="padding-top: 50px" *ngFor="let item of dummyArray">
+    <ion-spinner color="secondary"></ion-spinner>
+ </div>
+
+  <div *ngIf="!items.length  && !dummyArray.length" class="ion-text-center" style="padding-top: 40px">
+    <img src="assets/camera.png" width="150px" height="150px"/>
+    <h5 class="empty" style="font-family:bold">{{ 'No Ads yet' | translate }}</h5>
+  </div>
+
+</ion-content>
+<!-- ================== CONTENT END ================= -->

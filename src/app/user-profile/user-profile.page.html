@@ -1,0 +1,52 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+ <!-- ================ HEADER START ============== -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{displayName}}'s Ads</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<!-- ================ HEADER END ============== -->
+
+<!-- ================ CONTENT START ============== -->
+<ion-content>
+  <div class="main_content_div">
+    <div class="main_offer_div" *ngFor="let item of items">
+      <div class="offer_div" (click)="viewDetails(item.id)">
+        <div *ngFor="let img of item.images | slice:0:1">
+          <img src="{{img}}" class="bg_image back_image"/>
+        </div>
+          <div class="offer_detail">
+            <ion-label>
+              <h3 style="font-family: bold;">{{item.title}}</h3>
+              <p> <ion-icon name="location-outline"></ion-icon> {{item.locality}}</p>
+              <h2 style="font-family: bold; color:green;">${{item.price}}</h2>
+            </ion-label>
+          </div>
+      </div>
+      <div class="detail_div">
+        <ion-label (click)="chat(item.userId, item.id)">
+          <span><ion-icon name="mail-outline" style="font-size: 20px"></ion-icon></span>
+          {{ 'Chat' | translate }}
+        </ion-label>
+        <div class="line"></div>
+        <ion-label (click)="call(item.phoneNumber)">
+          <span><ion-icon name="call" style="font-size: 20px"></ion-icon></span>
+          {{ 'Call' | translate }}
+        </ion-label>
+      </div>
+  </div>
+  </div>
+</ion-content>
+<!-- ================ CONTENT END ============== -->

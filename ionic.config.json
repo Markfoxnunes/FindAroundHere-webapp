@@ -1,0 +1,7 @@
+{
+  "name": "ionic6-Quran-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,142 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!-- ================== HEADER START ================= -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="!haveILiked ? addToWishlist() : removeToWishlist()" fill="clear">
+        <ion-icon name="heart" color="light" *ngIf="!haveILiked" style="font-size: 25px;"></ion-icon>
+        <ion-icon color="danger" name="heart" *ngIf="haveILiked" style="font-size: 25px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- ================== HEADER END ================= -->
+
+<!-- ================== CONTENT START ================= -->
+<ion-content>
+  <div class="main_content_div" [hidden]="!details">
+      <div class="home_slider">
+        <!-- Swiper js, as ion-slides has depreciated in ionic 6 -->
+        <swiper #swiper [config]="config" (slideChange)="swiperSlideChanged($event)">
+          <ng-template swiperSlide *ngFor="let item of images">
+            <img src="{{item}}" (click)="openPreview(item)"/>
+          </ng-template>
+        </swiper>
+      </div>
+
+      <div class="cards_price">
+        <h5><b>{{title}}</b></h5>
+        <h2><b>${{price}}</b></h2>
+      </div>
+
+      <!-- item details -->
+      <div class="card">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-label>
+                <h6><b>{{ 'Price' | translate }}</b></h6>
+                <p>${{price}}</p>
+              </ion-label>
+            </ion-col>
+            <ion-col size="6">
+              <ion-label>
+                <h6><b>{{ 'Location' | translate }}</b></h6>
+                <p>{{location}}</p>
+              </ion-label>
+            </ion-col>
+            <ion-col size="6">
+              <ion-label>
+                <h6><b>{{ 'Category' | translate }}</b></h6>
+                <p>{{getCategory()}}</p>
+              </ion-label>
+            </ion-col>
+            <ion-col size="6">
+              <ion-label>
+                <h6><b>{{ 'Subcategory' | translate }}</b></h6>
+                <p>{{getSubcategory()}}</p>
+              </ion-label> 
+            </ion-col>
+            <ion-col size="6">
+              <ion-label>
+                <h6><b>{{ 'Condtion' | translate }}</b></h6>
+                <p>{{condition}}</p>
+              </ion-label>
+            </ion-col>
+            <ion-col size="6">
+              <ion-label>
+                <h6><b>{{ 'Posted on' | translate }}</b></h6>
+                <p>{{adDate | DateFormat | lowercase}}</p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="cards">
+        <h6 class="ion-text-wrap ion-padding">
+          {{description}}
+        </h6>
+      </div>
+
+      <div class="profile" (click)="viewSeller()">
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="{{getUserImage()}}"/>
+          </ion-avatar>
+          <ion-label>
+            <h6>{{getUsername()}}</h6>
+            <p style="font-size:12px">Registered: {{getTime() | DateFormat | lowercase}}</p>
+          </ion-label>
+          <ion-text slot="end" color="secondary">
+            {{ 'See all ads' | translate }}
+          </ion-text>
+        </ion-item>
+      </div>
+
+      <div #map id="map"></div>
+
+      <div class="cards_price">
+        <ion-button expand="block" fill="clear" (click)="goReview()" color="dark">{{ 'Reviews' | translate }} {{review.length}}</ion-button>
+        <ion-button expand="block" fill="clear" style="text-transform: none;" (click)="goReport()" color="secondary"><ion-icon name="flag" slot="start"></ion-icon>  {{ 'Report Ad' | translate }}</ion-button>
+      </div>
+
+  </div>
+
+  <div class="ion-text-center" style="padding-top: 50px" [hidden]="details">
+    <ion-spinner color="secondary"></ion-spinner>
+ </div>
+
+</ion-content>
+<!-- ================== CONTENT END ================= -->
+<ion-footer class="ion-no-border" [hidden]="!details">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button fill="outline" style="text-transform: none;" expand="block" (click)="chat()">
+          <ion-icon slot="start" name="chatbox-ellipses" style="font-size: 25px;"></ion-icon>
+          {{ 'Chat' | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button style="text-transform: none;" color="secondary" expand="block" (click)="call()">
+          <ion-icon slot="start" name="call" style="font-size: 25px;"></ion-icon>
+          {{ 'Call' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

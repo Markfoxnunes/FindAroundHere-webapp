@@ -1,0 +1,54 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!--===================== HEADER START =====================-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'Search or Drag Marker' | translate }}</ion-title>
+  </ion-toolbar>
+  
+  <ion-toolbar>
+    <ion-searchbar 
+        [(ngModel)]="autocomplete.query" 
+        [showCancelButton]="true" 
+        (ionInput)="updateSearch()" 
+        (ionCancel)="remove()"
+        placeholder="{{ 'Search address...' | translate }}">
+    </ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let item of autocompleteItems" 
+            (click)="chooseItem(item)" style="font-size: 13px; font-weight: bold;">
+            {{item}}
+        </ion-item>
+    </ion-list>
+  </ion-toolbar>
+</ion-header>
+<!--===================== HEADER END =====================-->
+
+<!--===================== CONTENT START =====================-->
+<ion-content class="bg_white" [fullscreen]="true">
+  <div class="map center_img" #map></div>
+</ion-content>
+<!--===================== CONTENT END =====================-->
+
+<!--===================== FOOTER START =====================-->
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+  <p class="d-flex">
+      <ion-icon class="zmdi zmdi-pin"></ion-icon>
+      {{address}}
+  </p>
+  <ion-button size="large" shape="block" class="btn" (click)="select()">{{'Done' | translate}}</ion-button>
+</ion-footer>
+

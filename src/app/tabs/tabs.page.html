@@ -1,0 +1,68 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+ -->
+
+ <!-- ================ TABS START ============== -->
+<ion-tabs (ionTabsDidChange)="setSelectedTab()">
+
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home">
+      <ion-icon [name]="selected == 'home' ? 'home' : 'home-outline'"></ion-icon>
+      <ion-label>{{ 'Home' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="favorite" *ngIf="loggIn === 'true'">
+      <ion-icon [name]="selected == 'favorite' ? 'star' : 'star-outline'"></ion-icon>
+      <ion-label>{{ 'Favorite' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="sell()" *ngIf="loggIn === 'true'">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>{{ 'Sell' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chat" *ngIf="loggIn === 'true'">
+      <ion-icon [name]="selected == 'chat' ? 'chatbox-ellipses' : 'chatbox-ellipses-outline'"></ion-icon>
+      <ion-label>{{ 'Message' | translate }}</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="profile" *ngIf="loggIn === 'true'">
+      <ion-icon [name]="selected == 'profile' ? 'person-circle' : 'person-circle-outline'"></ion-icon>
+      <ion-label>{{ 'Profile' | translate }}</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button *ngIf="loggIn != 'true'" (click)="presentModal()">
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-label>{{ 'Favorite' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="loggIn != 'true'" (click)="presentModal()">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>{{ 'Sell' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="loggIn != 'true'" (click)="presentModal()">
+      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+      <ion-label>{{ 'Message' | translate }}</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button *ngIf="loggIn != 'true'" (click)="presentModal()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>{{ 'Profile' | translate }}</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+<!-- ================ TABS END ============== -->
+

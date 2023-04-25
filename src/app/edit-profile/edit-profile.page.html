@@ -1,0 +1,53 @@
+<!--
+  Authors : Craft Software System
+  Website : https://craftsofts.com/
+  App Name : Deal - ionic 6 Buy and Sell, Admin, Admob
+  Created : 20-August-2022
+  This App Template Source code is licensed as per the
+  terms found in the Website https://craftsofts.com/license
+  Copyright © 2022-present Craft Software System.
+-->
+
+<!--===================== HEADER START =====================-->
+ <ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'Account' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--===================== HEADER END =====================-->
+
+<!--===================== CONTENT START =====================-->
+<ion-content class="ion-padding">
+  <div class="main_content_div">
+    <!-- Profile Photo -->
+    <div class="container">
+      <div class="outer" 
+        [ngStyle]="{'background-image': 'url(' + photoURL + ')'}">
+          <div class="inner" (click)="uploadImage()">
+             <ion-icon name="camera" class="camera-icon"></ion-icon>
+          </div>
+       </div>
+    </div>
+
+    <!-- Profile Details -->
+    <div class="item">
+      <ion-label class="title">{{ 'Name' | translate }}</ion-label>
+      <ion-input [(ngModel)]="displayName"></ion-input>
+    </div>
+    <div class="item">
+      <ion-label class="title">{{ 'Email' | translate }}</ion-label>
+      <ion-input [(ngModel)]="email" [readonly]="true"></ion-input>
+    </div>
+    <div class="item">
+      <ion-label class="title">{{ 'Phone Number' | translate }}</ion-label>
+      <ion-input [(ngModel)]="phoneNumber"></ion-input>
+    </div>
+    <ion-button class="btn" expand="block" shape="round"  [disabled]="!displayName || !email || !phoneNumber" (click)="setup()">
+      {{ 'Update' | translate }}
+    </ion-button>
+  </div>
+</ion-content>
+<!--===================== CONTENT END =====================-->

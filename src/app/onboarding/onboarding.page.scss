@@ -1,0 +1,35 @@
+swiper {
+    height: 100%;
+    div {
+    align-items: center;
+    justify-content: center;
+    //margin-top: 60px;
+    }
+}
+
+.slide1{
+    background: #002699;
+    color: #fff;
+    height: 100%;
+    margin: 0;
+}
+
+.slide2 {
+    background: #ff3333;
+    color: #fff;
+    height: 100%;
+    margin: 0;
+}
+
+.slide3 {
+    background: #b300b3;
+    color: #fff;
+    height: 100%;
+    margin: 0;
+}
+
+.button_skip{
+    display: flex;
+    justify-content: space-between;
+    bottom: 10px;
+}
